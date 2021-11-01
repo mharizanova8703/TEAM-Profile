@@ -40,7 +40,7 @@ function startPromp() {
       var { name, id, email, officeNumber } = answers
       var manager = new Manager(name, id, email, officeNumber)
       teamMember.push(manager)
-      console.log('memeber team', teamMember)
+      console.log('member team', teamMember)
 
       //Creating a function to start adding more team member after promp Questions
       startTeam()
@@ -57,7 +57,7 @@ function startTeam() {
       },
     ])
     .then((answers) => {
-      statment = answers.command
+      statement = answers.command
 
       switch (statement) {
         case 'Add an Engineer':
@@ -103,8 +103,9 @@ function prompEng() {
     ])
     .then((answers) => {
       var { name, id, email, github } = answers
-      var engineer = Engineer(name, id, email, github)
-      teamMember.push(engineer)
+      var engineer = new Engineer(name, id, email, github)
+      teamMember.push(Engineer)
+      console.log('member team', teamMember)
     })
 }
 //creating a function to promp intern name,id,email,school name
@@ -134,11 +135,12 @@ function prompIntern() {
     ])
     .then((answers) => {
       var { name, id, email, school } = answers
-      var intern = Intern(name, id, email, school)
+      var intern = newIntern(name, id, email, school)
+      teamMember.push(Intern)
     })
 }
 
-startPromp()
+
 
 function renderTeam() {
   if (!fs.existsSync(OUTPUT_DIR)) {
@@ -146,3 +148,4 @@ function renderTeam() {
   }
   fs.writeFileSync(outputPath, render(teamMember), 'utf8')
 }
+startPromp()
