@@ -1,0 +1,28 @@
+{
+  "name": "team-profile",
+  "version": "1.0.0",
+  "description": "Team generator",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "dependencies": {
+    "inquirer": "^8.2.0",
+    "jest": "^27.3.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mharizanova8703/TEAM-Profile.git"
+  },
+  "author": "Mariya Harizanova",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mharizanova8703/TEAM-Profile/issues"
+  },
+  "homepage": "https://github.com/mharizanova8703/TEAM-Profile#readme"
+}
