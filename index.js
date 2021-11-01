@@ -30,4 +30,50 @@ function startPromp() {
       message: 'What is the managers email?',
     },
   ])
+  .then(answers => {
+            var { name, id, email, officeNumber } = answers;
+            var manager = Manager(name, id, email, officeNumber);
+            memberTeam.push(manager);
+
+            //Creating a function to start adding more team member after promp Questions 
+            startTeam();
+  })
 }
+function startTeam(){
+
+}
+
+
+function prompEng() {
+    inquirer
+    .prompt([
+        {
+                type: "input",
+                name: "name",
+                message: "What is the Engineer's name?"
+            },
+        {
+                type: "input",
+                name: "id",
+                message: "What is the Engineer's ID?"
+            },
+            {
+                type: "input",
+                name: "email",
+                message: "What is the Engineer's email?"
+            },
+              {
+                type: "input",
+                name: "github",
+                message: "What is the Engineer's Github username?"
+              }
+    ])
+    .then(answers => {
+            var {name, id, email, github} = answers;
+            var engineer = Engineer(name, id, email, github);
+            teamMember.push(engineer);
+        })
+
+}
+
+startPromp()
