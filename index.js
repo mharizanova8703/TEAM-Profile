@@ -38,7 +38,7 @@ function startPromp() {
     .then((answers) => {
       var { name, id, email, officeNumber } = answers
       var manager = new Manager(name, id, email, officeNumber)
-     teamMember.push(manager)
+      teamMember.push(manager)
 
       //Creating a function to start adding more team member after promp Questions
       startTeam()
@@ -54,7 +54,7 @@ function startTeam() {
         choices: ['Add an Engineer', 'Add an Intern', 'Make team'],
       },
     ])
-    .then((answers )=> {
+    .then((answers) => {
       // create a switch statement to choose between engineer, intern, or build team
       statement = answers.command
 
@@ -65,7 +65,7 @@ function startTeam() {
         case 'Add an Intern':
           prompInt()
           break
-      } 
+      }
     })
 }
 
@@ -97,6 +97,8 @@ function prompEng() {
       var { name, id, email, github } = answers
       var engineer = new Engineer(name, id, email, github)
       teamMember.push(engineer)
+      //Creating a function to start adding more team member after promp Questions
+      startTeam()
     })
 }
 
@@ -128,6 +130,8 @@ function prompInt() {
       var { name, id, email, school } = answers
       var intern = new Intern(name, id, email, school)
       teamMember.push(intern)
+
+      startTeam()
     })
 }
 
