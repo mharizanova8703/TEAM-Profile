@@ -1,5 +1,6 @@
 const inquirer = require('inquirer')
 const fs = require('fs')
+const Employee = require('./lib/Employee')
 const Engineer = require('./lib/Engineer')
 const Intern = require('./lib/Intern')
 const Manager = require('./lib/Manager')
@@ -11,6 +12,7 @@ const outputPath = path.join(OUTPUT_DIR, 'team.html')
 const render = require('./src/template.js')
 
 const teamMember = []
+
 function startPromp() {
   // Creating function to Promp Manager questions
   inquirer
@@ -43,36 +45,45 @@ function startPromp() {
       console.log('member team', teamMember)
 
       //Creating a function to start adding more team member after promp Questions
-      startTeam()
+      //startTeam()
+      nextOne()
     })
 }
-function startTeam() {
-  inquirer
-    .prompt([
-      {
-        type: 'list',
-        name: 'command',
-        message: 'Would you like to add more team members?',
-        choices: ['Add an Engineer', 'Add an Intern', 'Create the team'],
-      },
-    ])
-    .then((answers) => {
-      statement = answers.command
+const anotherOne = [
+  {
+    type: 'list',
+    name: 'nextEmployee',
+    message:
+      'Select the type of team member you would like to add next, if you are done select "Done" to generate your team ',
+    choices: ['Engineer', 'Intern', 'Done'],
+  },
+]
+function nextOne() {
+  inquirer.prompt(anotherOne).then((response) => {
+    // .prompt([
+    //  {
+    //   type: 'list',
+    // name: 'command',
+    // message: 'Would you like to add more team members?',
+    // choices: ['Add an Engineer', 'Add an Intern', 'Create the team'],
+    //},
+    // ])
+    //.then((answers) => {
+    // statement = answers.command
 
-      switch (statement) {
-        case 'Add an Engineer':
-          prompEng()
-          break
+    switch (response.EEnginmployee) {
+      case 'Add an Engineer':
+        prompEng()
+        break
 
-        case ' Add an Intern':
-          prompIntern()
-          break
+      case ' Add an Intern':
+        prompIntern()
+        break
 
-        case 'Create the team':
-          startTeam()
-          break
-      }
-    })
+      case 'Create the team':
+        makeTeam()
+    }
+  })
   // use inquirer to ask them what they want tot add to the team and use a switch function...depending on what they choose fire off that prompEnd,you prompManager, promptIntern
   // when you dont want to add anymore team members fire off the generateHTML function which will pass the teammembers array to another file where you will have to dynamically create bootstrap cards and append them to a dynamically created html
 }
@@ -101,11 +112,17 @@ function prompEng() {
         message: "What is the Engineer's Github username?",
       },
     ])
-    .then((answers) => {
-      var { name, id, email, github } = answers
-      var engineer = new Engineer(name, id, email, github)
-      teamMember.push(Engineer)
+    .then((responce) => {
+      // var { name, id, email, github } = answers
+      var engineer = new Engineer(
+        responce.name,
+        responce.id,
+        responce.email,
+        responce.github,
+      )
+      teamMember.push(engineer)
       console.log('member team', teamMember)
+      nextOne()
     })
 }
 //creating a function to promp intern name,id,email,school name
@@ -133,19 +150,22 @@ function prompIntern() {
         message: 'What is the school name?',
       },
     ])
-    .then((answers) => {
-      var { name, id, email, school } = answers
-      var intern = newIntern(name, id, email, school)
-      teamMember.push(Intern)
+    .then((responce) => {
+      var intern = new Intern(
+        responce.name,
+        responce.id,
+        responce.email,
+        responce.school,
+      )
+      teamMember.push(intern)
+      console.log('member team', teamMember)
+      nextOne()
     })
 }
+//function renderTeam() {
+//if (!fs.existsSync(OUTPUT_DIR)) {
+//  fs.mkdirSync(OUTPUT_DIR)
+// }
+//fs.writeFileSync(outputPath, render(teamMember), 'utf8')
 
-
-
-function renderTeam() {
-  if (!fs.existsSync(OUTPUT_DIR)) {
-    fs.mkdirSync(OUTPUT_DIR)
-  }
-  fs.writeFileSync(outputPath, render(teamMember), 'utf8')
-}
 startPromp()
