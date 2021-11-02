@@ -5,6 +5,7 @@ const Engineer = require('./lib/Engineer')
 const Intern = require('./lib/Intern')
 const Manager = require('./lib/Manager')
 const path = require('path')
+const render = require('./lib/htmlRenderer')
 
 const OUTPUT_DIR = path.resolve(__dirname, 'output')
 const outputPath = path.join(OUTPUT_DIR, 'team.html')
@@ -65,6 +66,8 @@ function startTeam() {
         case 'Add an Intern':
           prompInt()
           break
+        case ' you dont want to add more Employee  at the team':
+          makeTeam()
       }
     })
 }
@@ -134,5 +137,10 @@ function prompInt() {
       startTeam()
     })
 }
-
+//function startTeam() {
+//fs.writeFileSync(outputPath, mainRender(teamMember), 'utf-8')
+//}function makeTeam() {
+function makeTeam() {
+  fs.writeFileSync(outputPath, render(teamMember), 'utf-8')
+}
 startPromp()
