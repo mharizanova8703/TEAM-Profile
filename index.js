@@ -11,6 +11,7 @@ const OUTPUT_DIR = path.resolve(__dirname, 'output')
 const outputPath = path.join(OUTPUT_DIR, 'team.html')
 
 const teamMember = []
+
 function startPromp() {
   // Promping Manager questions
   inquirer
@@ -45,33 +46,54 @@ function startPromp() {
       startTeam()
     })
 }
+const anotherOne = [
+  {
+    type: 'list',
+    name: 'nextEmployee',
+    message:
+      'Select the type of team member you would like to add next, if you are done select "Done" to generate your team ',
+    choices: ['Engineer', 'Intern', 'Done'],
+  },
+]
 function startTeam() {
-  inquirer
-    .prompt([
-      {
-        type: 'list',
-        name: 'command',
-        message: 'Would you like to add more team members?',
-        choices: ['Add an Engineer', 'Add an Intern', 'Make team'],
-      },
-    ])
-    .then((answers) => {
-      // create a switch statement to choose between engineer, intern, or build team
-      statement = answers.command
+  inquirer.prompt(anotherOne).then((answers) => {
+    console.log(answers)
+    switch (answers.nextEmployee) {
+      case 'Engineer':
+        prompEng()
+        break
+      case 'Intern':
+        prompInt()
+        break
+      case 'Done':
+        console.log('Creating your team!')
+        makeTeam()
+    }
+  })
+  //inquirer
+  //.prompt([
+  // {
+  //   type: 'list',
+  //   name: 'command',
+  //  message: 'Would you like to add more team members?',
+  // choices: ['Add an Engineer', 'Add an Intern', 'Done'],
+  // },
+  //])
+  // .then((answers) => {
+  // statement = answers.command
 
-      switch (statement) {
-        case 'Add an Engineer':
-          prompEng()
-          break
-        case 'Add an Intern':
-          prompInt()
-          break
-        case ' you dont want to add more Employee  at the team':
-          makeTeam()
-      }
-    })
+  //  switch (statement) {
+  //  case 'Add an Engineer':
+  //   prompEng()
+  //  break
+  // case 'Add an Intern':
+  //   prompInt()
+  // break
+  // case ' Done':
+  //   makeTeam()
+  // }
+  // })
 }
-
 function prompEng() {
   inquirer
     .prompt([
