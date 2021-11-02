@@ -65,7 +65,7 @@ function startTeam() {
         case 'Add an Intern':
           prompInt()
           break
-      } //  brea}k;
+      } 
     })
 }
 
