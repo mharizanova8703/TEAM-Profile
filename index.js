@@ -70,29 +70,7 @@ function startTeam() {
         makeTeam()
     }
   })
-  //inquirer
-  //.prompt([
-  // {
-  //   type: 'list',
-  //   name: 'command',
-  //  message: 'Would you like to add more team members?',
-  // choices: ['Add an Engineer', 'Add an Intern', 'Done'],
-  // },
-  //])
-  // .then((answers) => {
-  // statement = answers.command
-
-  //  switch (statement) {
-  //  case 'Add an Engineer':
-  //   prompEng()
-  //  break
-  // case 'Add an Intern':
-  //   prompInt()
-  // break
-  // case ' Done':
-  //   makeTeam()
-  // }
-  // })
+  
 }
 function prompEng() {
   inquirer
@@ -159,9 +137,7 @@ function prompInt() {
       startTeam()
     })
 }
-//function startTeam() {
-//fs.writeFileSync(outputPath, mainRender(teamMember), 'utf-8')
-//}function makeTeam() {
+
 function makeTeam() {
   fs.writeFileSync(outputPath, render(teamMember), 'utf-8')
 }
