@@ -74,6 +74,7 @@ SO THAT I have quick access to their emails and GitHub profiles
    *  Building  more knowledge  through : https://www.w3schools.com/js/js_switch.asp
    *  Building  more knowledge  through : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/constructor
   
+  For more questions contact me via email:mhariznova@yahoo.com
   
   
 HAPPY CODING!
