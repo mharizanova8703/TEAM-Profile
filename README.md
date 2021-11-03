@@ -1,4 +1,9 @@
 # TEAM Profile
+ # Screenshot 
+ 
+ <img width="1390" alt="Screen Shot 2021-11-03 at 10 42 12 AM" src="https://user-images.githubusercontent.com/85656320/140082464-9ea3d4a5-5e88-4b92-acc3-35dc7035ccb3.png">
+
+ 
  
 # Instructions
 This is a software engineering team generator command line application.The application will prompt the user for information about the team manager and then information about the team members. The user can input any number of team members, and they may be a mix of engineers and interns. This assignment must also pass all unit tests.When the user has completed building the team, the application will create an HTML file that displays a nicely formatted team roster based on the information provided by the user.
