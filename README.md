@@ -63,6 +63,24 @@ SO THAT I have quick access to their emails and GitHub profiles
 └── package.json           
 ```
 
+# License 
+  ![Github license](https://img.shields.io/badge/license-MIT-blue.svg)
+  
+  # Contributions 
+   
+   * Special Thanks to a @djdyer            David Dyer
+   *  Reference for help for switch statment : TA
+   *  Reference for Help about output : Ask BCS Learning Assistant
+   *  Building  more knowledge  through : https://www.w3schools.com/js/js_switch.asp
+   *  Building  more knowledge  through : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/constructor
+  
+  
+  
+  
+
+
+
+
 
 
 
