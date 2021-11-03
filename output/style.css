@@ -6,8 +6,7 @@
   padding-bottom: 3%;
 }
 h1.text-center {
-  
-  font-size: 50px;
+  font-size: 35px;
   color: teal;
   font-weight: bold;
   text-align: center;
@@ -23,11 +22,14 @@ h1.text-center {
   color: teal;
 }
 .card-body {
+  margin-top: 5px;
+  padding: 3px;
   width: 300px;
   background-color: #f6f7f8;
+  border-radius: 8px;
  
 }
-.container-fluid{
-    
-   
+.jumbotron {
+  background-color: white;
+  padding: 20px;
 }
