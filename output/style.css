@@ -3,8 +3,10 @@
   height: 100%;
   padding-right: 50%;
   margin-left: 25%;
+  padding-bottom: 3%;
 }
 h1.text-center {
+  
   font-size: 50px;
   color: teal;
   font-weight: bold;
@@ -23,4 +25,9 @@ h1.text-center {
 .card-body {
   width: 300px;
   background-color: #f6f7f8;
+ 
+}
+.container-fluid{
+    
+   
 }
