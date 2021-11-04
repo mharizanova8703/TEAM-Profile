@@ -80,6 +80,7 @@ SO THAT I have quick access to their emails and GitHub profiles
    *  Reference for Help about output : Ask BCS Learning Assistant
    *  Building  more knowledge  through : https://www.w3schools.com/js/js_switch.asp
    *  Building  more knowledge  through : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/constructor
+   *  My Img in teamfile, was overwrite  from the main html. Reference  for help : Ask BCS Learning Assistant
   
   For more questions contact me via email:mhariznova@yahoo.com
   
